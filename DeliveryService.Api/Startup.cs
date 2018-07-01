@@ -10,6 +10,7 @@ using DeliveryService.Data.SQL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using DeliveryService.Data.SQL.Context;
 using DeliveryService.Application.Domain.Interfaces;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace DeliveryService.Api
 {
@@ -28,17 +29,18 @@ namespace DeliveryService.Api
 
             services.AddMvc();
 
-			//services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new Info
-            //    {
-            //        Version = "v1",
-            //        Title = "API de entrga de melhores rotas",
-            //        Description = "API para gerenciamento e manutencao de rotas do sistema",
-            //        TermsOfService = "None",
-            //        Contact = new Contact() { Name = "Giancarlos A. Macedo", Email = "gianaugusto@gmail.com", Url = "www.gianaugusto.com.br" }
-            //    });
-            //});
+
+			services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "API de entrga de melhores rotas",
+                    Description = "API para gerenciamento e manutencao de rotas do sistema",
+                    TermsOfService = "None",
+                    Contact = new Contact() { Name = "Giancarlos A. Macedo", Email = "gianaugusto@gmail.com", Url = "www.gianaugusto.com.br" }
+                });
+            });
 
 			services.AddScoped<DbContext, ServiceContext>();
 
@@ -58,11 +60,11 @@ namespace DeliveryService.Api
             app.UseMvc();
         
 		
-			//app.UseSwagger();
-            //app.UseSwaggerUI(c =>
-            //{
-			//    c.SwaggerEndpoint("/swagger/v1/swagger.json", "XPTO : Delivery Services - V1");
-            //});
+			app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+			    c.SwaggerEndpoint("/swagger/v1/swagger.json", "XPTO : Delivery Services - V1");
+            });
 
 
 			using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
