@@ -1,0 +1,11 @@
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/bin/Debug/netcoreapp2.0/DeliveryService.Data.SQL.deps.json
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/bin/Debug/netcoreapp2.0/DeliveryService.Data.SQL.dll
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/bin/Debug/netcoreapp2.0/DeliveryService.Data.SQL.pdb
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/bin/Debug/netcoreapp2.0/DeliveryService.Application.dll
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/bin/Debug/netcoreapp2.0/DeliveryService.Application.pdb
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/obj/Debug/netcoreapp2.0/DeliveryService.Data.SQL.csprojResolveAssemblyReference.cache
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/obj/Debug/netcoreapp2.0/DeliveryService.Data.SQL.csproj.CoreCompileInputs.cache
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/obj/Debug/netcoreapp2.0/DeliveryService.Data.SQL.AssemblyInfoInputs.cache
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/obj/Debug/netcoreapp2.0/DeliveryService.Data.SQL.AssemblyInfo.cs
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/obj/Debug/netcoreapp2.0/DeliveryService.Data.SQL.dll
+/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Data.SQL/obj/Debug/netcoreapp2.0/DeliveryService.Data.SQL.pdb
