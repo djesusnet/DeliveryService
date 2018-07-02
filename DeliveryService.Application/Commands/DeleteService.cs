@@ -5,10 +5,10 @@ namespace DeliveryService.Application.Commands
 {
 	public class UpdateService : IRequest<Response>
     {
-		public int Id { get; }
-		public string Name { get; }
-        public int Time { get; }
-        public int Cost { get; }
+		public int Id { get; private set;}
+		public string Name { get; private set;}
+		public int Time { get; private set;}
+		public int Cost { get; private set;}
 		      
 		public UpdateService(int id, string name, int time, int cost)
         {

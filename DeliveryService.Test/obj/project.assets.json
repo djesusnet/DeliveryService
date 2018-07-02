@@ -1222,6 +1222,18 @@
           "lib/netstandard1.3/Moq.dll": {}
         }
       },
+      "NBuilder/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/FizzWare.NBuilder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FizzWare.NBuilder.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -4207,6 +4219,17 @@
         "lib/netstandard1.3/Moq.xml",
         "moq.4.8.3.nupkg.sha512",
         "moq.nuspec"
+      ]
+    },
+    "NBuilder/5.1.0": {
+      "sha512": "Ufoke2D3atd7B32ib9MQ4p859s9b0GK2nsVMgGaPB0Y0qVnNkyzoNXZfCHJn10cMSStn9XzbXMCkll289oFVMA==",
+      "type": "package",
+      "path": "nbuilder/5.1.0",
+      "files": [
+        "lib/net40/FizzWare.NBuilder.dll",
+        "lib/netstandard1.6/FizzWare.NBuilder.dll",
+        "nbuilder.5.1.0.nupkg.sha512",
+        "nbuilder.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -8563,6 +8586,7 @@
       "Microsoft.NET.Test.Sdk >= 15.7.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "Moq >= 4.8.3",
+      "NBuilder >= 5.1.0",
       "xunit >= 2.3.1",
       "xunit.runner.visualstudio >= 2.3.1"
     ]
@@ -8638,6 +8662,10 @@
           "Moq": {
             "target": "Package",
             "version": "4.8.3"
+          },
+          "NBuilder": {
+            "target": "Package",
+            "version": "5.1.0"
           }
         },
         "imports": [

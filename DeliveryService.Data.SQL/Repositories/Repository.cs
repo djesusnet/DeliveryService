@@ -17,6 +17,11 @@ namespace DeliveryService.Data.SQL.Repositories
             DbSet = Db.Set<TEntity>();
         }
 
+		public TEntity Get(int id)
+        {
+			return Db.Find<TEntity>(id);
+        }
+
 		public async Task<TEntity> GetAsync(int id)
         {
 			return await Db.FindAsync<TEntity>(id);
@@ -46,7 +51,19 @@ namespace DeliveryService.Data.SQL.Repositories
 			Db.Entry(entity).State = EntityState.Deleted;
 			await Db.SaveChangesAsync();
         }
-              
+
+		public void Add(TEntity entity)
+        {
+            Db.Set<TEntity>().Add(entity);
+        }
+        
+		public int SaveChanges() =>
+            Db.SaveChanges();
+
+		public Task SaveAsync() =>
+		    Db.SaveChangesAsync();
+
+
         public void Dispose()
         {
             Db.Dispose();

@@ -12,5 +12,6 @@
   <ItemGroup>
     <Compile Remove="Domain\Interfaces\IUnitOfWork.cs" />
     <Compile Remove="Repositories\ServiceRepository.cs" />
+    <Compile Remove="Event\ServiceRouteEvent.cs" />
   </ItemGroup>
 </Project>

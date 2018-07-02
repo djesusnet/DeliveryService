@@ -1,11 +1,11 @@
-﻿using DeliveryService.Application.Core;
-using FluentValidation;
+﻿using System;
 using MediatR;
+using FluentValidation;
+using DeliveryService.Application.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using DeliveryService.Data.SQL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using DeliveryService.Data.SQL.Context;
@@ -28,8 +28,7 @@ namespace DeliveryService.Api
             AddApplicationServices(services);
 
             services.AddMvc();
-
-
+            
 			services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info
@@ -47,6 +46,7 @@ namespace DeliveryService.Api
             var connString = Configuration.GetConnectionString("DefaultConnection");
 			services.AddDbContext<ServiceContext>(o => o.UseSqlServer(connString));
 			services.AddScoped<IServiceRepository, ServiceRepository>();
+			services.AddScoped<IRouteRepository, RouteRepository>();
 
         }
 
@@ -59,27 +59,32 @@ namespace DeliveryService.Api
 
             app.UseMvc();
         
-		
 			app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
 			    c.SwaggerEndpoint("/swagger/v1/swagger.json", "XPTO : Delivery Services - V1");
             });
 
-
-			using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            {
-				var context = serviceScope.ServiceProvider.GetRequiredService<ServiceContext>();
-
-                if (context.Database.EnsureCreated())
+            try
+			{
+				using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
                 {
-					var seed = new DeliveryService.Data.SQL.Tools.Seed(context);
+                    var context = serviceScope.ServiceProvider.GetRequiredService<ServiceContext>();
 
-                    // preenche os dados iniciais
-					seed.SeedServiceRoutes();
-                    
+                    if (context.Database.EnsureCreated())
+                    {
+                        var seed = new Data.SQL.Tools.Seed(context);
+
+                        // seed intial data
+                        seed.SeedServiceRoutes();
+                    }
                 }
-            }
+			}
+			catch (Exception ex)
+			{
+				Console.Write(ex);
+			}
+
 		}
 
         private static void AddApplicationServices(IServiceCollection services)

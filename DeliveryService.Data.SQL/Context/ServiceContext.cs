@@ -16,7 +16,8 @@ namespace DeliveryService.Data.SQL.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration(new ServiceRouteMap());
+            modelBuilder.ApplyConfiguration(new ServiceMap());
+			modelBuilder.ApplyConfiguration(new RouteMap());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

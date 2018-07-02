@@ -9,13 +9,13 @@ namespace DeliveryService.Tests.Controllers
     {
 		private ServiceController _controller;
 
-        private Mock<IServiceRepository> _repositoryMock = new Mock<IServiceRepository>();
-
-		private Mock<IMediator> _mediatrMock = new Mock<IMediator>();
+		private Mock<IServiceRepository> serviceRepository = new Mock<IServiceRepository>();
+        private Mock<IRouteRepository> routeRepository = new Mock<IRouteRepository>();
+        private Mock<IMediator> _mediatrMock = new Mock<IMediator>();
         
 		public ServiceControllerTests()
         {
-			_controller = new ServiceController(_mediatrMock.Object);
+			_controller = new ServiceController(_mediatrMock.Object, serviceRepository.Object, routeRepository.Object);
         }
   
     }
