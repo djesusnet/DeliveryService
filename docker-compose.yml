@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  webapi:
+    image: delivery_service_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - 57583:57583
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Data Source=db;Initial Catalog=Insumo;Integrated Security=False;User Id=sa;Password=Senh@for7e;MultipleActiveResultSets=True
+    depends_on:
+      - db
+
+  db:
+    image: "microsoft/mssql-server-linux"
+    ports: 
+      - 1434:1433 
+    environment:
+      SA_PASSWORD: "Senh@for7e"
+      ACCEPT_EULA: "Y"
