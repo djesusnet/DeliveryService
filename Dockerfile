@@ -11,10 +11,10 @@ COPY DeliveryService.Data.SQL/DeliveryService.Data.SQL.csproj DeliveryService.Da
 RUN dotnet restore -nowarn:msb3202,nu1503
 COPY . .
 WORKDIR /src/DeliveryService.Api
-RUN dotnet build -o /app
+RUN dotnet build -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish -o /app
+RUN dotnet publish -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
