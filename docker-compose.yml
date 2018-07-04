@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports: 
-      - 57583:57583
+      - 8080:80
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Data Source=db;Initial Catalog=Insumo;Integrated Security=False;User Id=sa;Password=Senh@for7e;MultipleActiveResultSets=True
