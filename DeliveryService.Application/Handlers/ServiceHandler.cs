@@ -56,7 +56,7 @@ namespace DeliveryService.Application.Handlers
 			var response = new Response();
 			var result = serviceRepository.Query().ToList();
 
-			if(!result.Any(x => x.Id == request.StartRouteId))
+			if(!result.Any(x => x.Id == request.StartId))
 			{
 				response.AddError("Initial Service does not exist.");
 
@@ -75,9 +75,9 @@ namespace DeliveryService.Application.Handlers
 				x.AddRoutes(routeRepository.Query().Where(r => r.ServiceOriginId == x.Id).ToList());
 			});
             
-			var path = new List<int>(){ request.StartRouteId };
+			var path = new List<int>(){ request.StartId };
 			         
-			SearchPath(request.StartRouteId, request.DestinationId, ref path, ref result);
+			SearchPath(request.StartId, request.DestinationId, ref path, ref result);
             
 			return Task.FromResult(new Response(path));
         }

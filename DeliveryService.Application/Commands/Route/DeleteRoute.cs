@@ -3,11 +3,11 @@ using MediatR;
 
 namespace DeliveryService.Application.Commands
 {
-	public class DeleteService : IRequest<Response>
+	public class DeleteRoute : IRequest<Response>
     {
 		public int Id { get; private set;}
-		      
-		public DeleteService(int id)
+
+		public DeleteRoute(int id)
         {
 			Id = id;
         }

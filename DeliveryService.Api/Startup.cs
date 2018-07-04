@@ -45,9 +45,7 @@ namespace DeliveryService.Api
 
             var connString = Configuration.GetConnectionString("DefaultConnection");
 			services.AddDbContext<ServiceContext>(o => o.UseSqlServer(connString));
-			services.AddScoped<IServiceRepository, ServiceRepository>();
-			services.AddScoped<IRouteRepository, RouteRepository>();
-
+			         
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -88,8 +86,10 @@ namespace DeliveryService.Api
 		}
 
         private static void AddApplicationServices(IServiceCollection services)
-        {
-            services.AddScoped<IServiceRepository, ServiceRepository>();
+		{
+			services.AddScoped<IServiceRepository, ServiceRepository>();
+            services.AddScoped<IRouteRepository, RouteRepository>();
+
             AddMediatr(services);
         }
 

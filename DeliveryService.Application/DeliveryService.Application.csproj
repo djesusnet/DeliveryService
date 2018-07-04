@@ -14,4 +14,7 @@
     <Compile Remove="Repositories\ServiceRepository.cs" />
     <Compile Remove="Event\ServiceRouteEvent.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\Route\" />
+  </ItemGroup>
 </Project>

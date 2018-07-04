@@ -2,14 +2,11 @@
 
 namespace DeliveryService.Application.Commands.Validators
 {
-    public class CreateServiceValidator : AbstractValidator<CreateService>
+	public class CreateRouteValidator : AbstractValidator<CreateRoute>
     {
-        public CreateServiceValidator()
+		public CreateRouteValidator()
         {
-            RuleFor(a => a.Name)
-                .NotEmpty()
-                .WithMessage("O Nome é obrigatório");
-
+                    
 			RuleFor(a => a.Time)
                 .NotEmpty()
                 .WithMessage("O Tempo é obrigatório");
@@ -17,6 +14,14 @@ namespace DeliveryService.Application.Commands.Validators
 			RuleFor(a => a.Cost)
                 .NotEmpty()
                 .WithMessage("O Custo é obrigatória");
+   
+			RuleFor(a => a.ServiceOriginId)
+                .NotEmpty()
+                .WithMessage("A origem é obrigatória");
+   
+			RuleFor(a => a.ServiceDestinationId)
+                .NotEmpty()
+                .WithMessage("O destino é obrigatório");
    
         }
     }

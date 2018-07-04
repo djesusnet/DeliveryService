@@ -30,7 +30,7 @@ namespace DeliveryService.Tests.Handlers
 		[Fact]
 		public async Task CreateServiceRoute()
         {
-			var comand = new CreateService("Service test 01",1,1);
+			var comand = new CreateService("Service test 01");
             
             var result = await _handler.Handle(comand,GetCancelationToken(TimeSpan.FromSeconds(1)).Token);
 
@@ -47,7 +47,7 @@ namespace DeliveryService.Tests.Handlers
         {
 			var message = $"Service test 01 updated {DateTime.Now.ToString("yyyyMMddHHmmssffff")}";
 
-			var comand = new UpdateService(1, message, 1, 1);
+			var comand = new UpdateService(1, message);
 
             var result = await _handler.Handle(comand, GetCancelationToken(TimeSpan.FromSeconds(1)).Token);
 

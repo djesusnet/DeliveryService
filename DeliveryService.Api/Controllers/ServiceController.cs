@@ -14,31 +14,22 @@ namespace DeliveryService.Api.Controllers
     {
 		private readonly IMediator mediator;
 		private readonly IServiceRepository serviceRepository;      
-		private readonly IRouteRepository routeRepository;
-        
+
 		public ServiceController(
 			IMediator mediator, 
-			IServiceRepository serviceRepository,
-			IRouteRepository routeRepository
+			IServiceRepository serviceRepository
 		)
         {
             this.mediator = mediator;
 			this.serviceRepository = serviceRepository;
-			this.routeRepository = routeRepository;
         }
 
 		[HttpGet]
 		public IActionResult Get(){
 			try
    			{
-				var result = serviceRepository.Query().ToList();
 
-				result.ForEach(x =>
-				{
-					x.AddRoutes(routeRepository.Query().Where(r => r.ServiceOriginId == x.Id).ToList());
-				});
-
-				return Ok(result);
+				return Ok(serviceRepository.Query());
 		    }
 			catch (System.Exception ex)
 			{

@@ -15,7 +15,7 @@ namespace DeliveryService.Tests.Controllers
         
 		public ServiceControllerTests()
         {
-			_controller = new ServiceController(_mediatrMock.Object, serviceRepository.Object, routeRepository.Object);
+			_controller = new ServiceController(_mediatrMock.Object, serviceRepository.Object);
         }
   
     }

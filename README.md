@@ -10,15 +10,15 @@ Webapi desenvolvida em asp.net core, usando Mediatr para comunicação via mensa
 
 1º opção : 
 
-    Abrir a aplicação no Visual studio e executar o webapi
+    Abrir a aplicação no Visual studio alterar a string de conexao para um endereço SQL server válido e executar o webapi
 
 2º opção :
 
-    * Necessario Docker instalado.
+    * Necessario Docker e docker-compose instalado.
 
     No prompt de comando navegue até a pasta raiz da aplicação e execute o seguinte comando:
 
-    ###docker-compose up
+    $ docker-compose up
 
-    e acessar http://localhost:57583/swagger/index.html
+    e acessar http://localhost:8080/swagger/index.html
 

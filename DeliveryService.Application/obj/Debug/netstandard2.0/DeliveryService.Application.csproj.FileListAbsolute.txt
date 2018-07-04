@@ -14,4 +14,3 @@
 /Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Application/obj/Debug/netstandard2.0/DeliveryService.Application.AssemblyInfo.cs
 /Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Application/obj/Debug/netstandard2.0/DeliveryService.Application.dll
 /Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Application/obj/Debug/netstandard2.0/DeliveryService.Application.pdb
-/Users/gian/Documents/Repositorio/gianaugusto/DeliveryService/DeliveryService.Application/obj/Debug/netstandard2.0/DeliveryService.Application.csprojResolveAssemblyReference.cache
